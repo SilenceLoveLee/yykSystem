@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>         <!--数据库驱动路径 -->
+    <classPathEntry
+            location="D:/maven-repository/repository/mysql/mysql-connector-java/8.0.15/mysql-connector-java-8.0.15.jar"/>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!-- 使用criteria代替Examples自动生成结尾 如这里会在dao下生成MyInfoCriteria 否则默认的为MyInfoExample-->
+        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="Example$" />
+            <property name="replaceString" value="Criteria" />
+        </plugin>
+       
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/yyk?serverTimezone=GMT%2B8" userId="root"  password="123456">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <!--域模型层,生成的目标包,项目目标源文件 -->
+        <javaModelGenerator targetPackage="com.misst.yyksystem.entity"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!--XML映射文件,生成的位置（目标包）,源代码文件夹 -->
+        <sqlMapGenerator targetPackage="com.misst.yyksystem.mapping"
+                         targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+        <!--XML对应的Mapper类 -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.misst.yyksystem.dao"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+        <!--下面是数据库表名和项目中需要生成类的名称，建议和数据库保持一致，如果有多个表，添加多个节点即可 -->
+ 
+<!--        <table tableName="login_table" domainObjectName="SysLogin"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+        </table>-->
+
+
+       <!-- <table tableName="result_table" domainObjectName="SysResult"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+        </table>-->
+
+
+        <table tableName="basecode_table" domainObjectName="BaseCode"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+        </table>
+
+
+
+
+        
+	     <!-- <table tableName="order_table" domainObjectName="SysOrder" 
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+        </table>  -->
+<!--		<table tableName="user_table" domainObjectName="SysUser" -->
+<!--               enableCountByExample="true" enableUpdateByExample="true"-->
+<!--               enableDeleteByExample="true" enableSelectByExample="true"-->
+<!--               selectByExampleQueryId="true">-->
+<!--        </table>-->
+        <!-- <table tableName="emp_table" domainObjectName="SysEmp" 
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+        </table> -->
+       <!--  <table tableName="job_table" domainObjectName="SysJob" 
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+        </table> -->
+       <!--  <table tableName="emp_job_table" domainObjectName="SysEmpJob" 
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+        </table> -->
+       <!--  <table tableName="base_code_type" domainObjectName="BaseCodeType" 
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+        </table> -->
+      <!--   <table tableName="base_code" domainObjectName="BaseCode" 
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+        </table> -->
+        <!--  <table tableName="goods_table" domainObjectName="SysGoods" 
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+        </table> -->
+        <!--  <table tableName="goods_shelves_table" domainObjectName="SysGoodsShelves" 
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+        </table> -->
+         <!-- <table tableName="line_table" domainObjectName="SysLine" 
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+        </table> -->
+        <!--  <table tableName="shelves_table" domainObjectName="SysShelves" 
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+        </table> -->
+         <!--  <table tableName="vehicle_table" domainObjectName="SysVehicle" 
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+        </table>  -->
+        
+    </context>
+</generatorConfiguration>

@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://localhost:3306/yyk?serverTimezone=GMT%2B8
+    type: com.alibaba.druid.pool.DruidDataSource
+    maxIdle: 10
+    maxWait: 60000
+    minIdle: 5
+    initialSize: 5
+    maxActive: 20
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 30000
+    validationQuery: select 1 from dual
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatement: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    jackson:
+       date-format: yyyy-MM-dd 
+       time-zone: GMT+8
+mybatis:
+  config-location: classpath:sqlMapconfig.xml
+  mapper-locations: classpath*:com/misst/yyksystem/mapping/*.xml
+  type-aliases-package: com.misst.yyksystem.entity
+
+
+
+
+
+
